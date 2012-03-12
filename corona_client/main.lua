@@ -146,6 +146,28 @@ local function showUser( event )
 end
 --]]
 
+
+
+
+local function createMove( event )
+
+	print( "------------------ createMove ------------------" ) 
+	
+	if ( event.isError ) then
+		myText.text = "Network error!"
+	else
+		myText.text = "See Corona Terminal for response"
+		print( event.response )
+		
+		print("")
+	end
+
+end
+
+
+
+
+
 local function createSession( event )
 
 	print( "------------------ createSession ------------------" ) 
@@ -168,6 +190,18 @@ local function createSession( event )
 		
 		network.request( serverAddress .. "/users/games.json?id=" .. userInfo["id"], "GET", getGames )
 
+
+--network.request( serverAddress .. "/moves/create.json?game_id=2&data=JSON%20data%20with%20spaces", "GET", createMove )
+
+
+--[[
+postData = "game_id=2&data=JSONdata2"
+
+local params = {}
+params.body = postData
+
+network.request( serverAddress .. "/moves/create.json", "POST", createMove, params )
+--]]
 	end
 
 end
@@ -175,6 +209,10 @@ end
 print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 network.request( serverAddress .. "/sessions/create.json?email=test1@test.com&password=password1", "GET", createSession )
+
+
+
+
 
 
 
