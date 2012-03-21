@@ -22,6 +22,7 @@
 		963800DD1518FFFF0081A28A /* NumberFlipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 963800DC1518FFFF0081A28A /* NumberFlipView.m */; };
 		963800E11519176A0081A28A /* FlippingScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 963800E0151917690081A28A /* FlippingScoreView.m */; };
 		96ABD796151A2C8400B36E9A /* flip_board74x115@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 96ABD795151A2C8400B36E9A /* flip_board74x115@2x~ipad.png */; };
+		96FAD25B151A3AB8005C52D9 /* flip_board74x115~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 96FAD25A151A3AB8005C52D9 /* flip_board74x115~ipad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		963800DF151917690081A28A /* FlippingScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlippingScoreView.h; sourceTree = "<group>"; };
 		963800E0151917690081A28A /* FlippingScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlippingScoreView.m; sourceTree = "<group>"; };
 		96ABD795151A2C8400B36E9A /* flip_board74x115@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flip_board74x115@2x~ipad.png"; sourceTree = "<group>"; };
+		96FAD25A151A3AB8005C52D9 /* flip_board74x115~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flip_board74x115~ipad.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		4DCA54AD147791D8009B8741 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				96FAD25A151A3AB8005C52D9 /* flip_board74x115~ipad.png */,
 				96ABD795151A2C8400B36E9A /* flip_board74x115@2x~ipad.png */,
 			);
 			name = Resources;
@@ -200,6 +203,7 @@
 			files = (
 				4DCA549914778FD5009B8741 /* InfoPlist.strings in Resources */,
 				96ABD796151A2C8400B36E9A /* flip_board74x115@2x~ipad.png in Resources */,
+				96FAD25B151A3AB8005C52D9 /* flip_board74x115~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,10 +258,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -272,11 +276,11 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -287,7 +291,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "transform/transform-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "transform/transform-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -300,7 +303,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "transform/transform-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "transform/transform-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
