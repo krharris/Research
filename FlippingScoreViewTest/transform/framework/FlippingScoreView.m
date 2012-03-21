@@ -96,9 +96,11 @@
     }
     //*/
     
-    /*
-    int numberWidth = 36;
-    int numberHeight = 57;
+    //*
+    
+    // Timer 
+    int numberWidth = 37;
+    int numberHeight = 58;
     int numDigits = 5;
     int pixelsBetweenDigits = 2;
     
@@ -125,7 +127,7 @@
             numberFlipView.fontAlignment = @"center";
             numberFlipView.textOffset = CGPointMake(0.0, -2.0);
             numberFlipView.textTruncationMode = kCATruncationEnd;
-            numberFlipView.sublayerCornerRadius = 6.0f;
+            //numberFlipView.sublayerCornerRadius = 6.0f;
             [numberFlipView initNumbers];
             
             [animationDelegates addObject:numberFlipView.animationDelegate];
@@ -176,7 +178,7 @@
     }
     //*/
     
-    //*
+    /*
     int numberWidth = 74;
     int numberHeight = 115;
     int numDigits = 5;
