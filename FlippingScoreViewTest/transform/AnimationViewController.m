@@ -63,12 +63,6 @@
 }
 */
 
-- (void)dealloc
-{
-    //[flipView release];
-    
-    [super dealloc];
-}
 
 - (void)viewDidLoad
 {

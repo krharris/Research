@@ -45,7 +45,7 @@
         //_score = score;
     }
     [lock unlock];
-    [lock release], lock = nil;
+    lock = nil;
 }
 
 -(int) score

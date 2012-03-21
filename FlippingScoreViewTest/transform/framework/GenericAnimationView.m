@@ -74,9 +74,7 @@
 - (void)dealloc
 {
     [imageStackArray removeAllObjects];
-    [imageStackArray release];
     
-    [super dealloc];
 }
 
 - (BOOL)printText:(NSString *)tickerString 
@@ -109,7 +107,7 @@
         label.contentsScale = [[UIScreen mainScreen] scale];
         label.contentsGravity = kCAGravityResizeAspect;
         label.string = tickerString;
-        label.font = font;
+        label.font = (__bridge void*)font;
         label.fontSize = fontSize;
         label.alignmentMode = fontAlignment;
         label.truncationMode = textTruncationMode;

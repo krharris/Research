@@ -41,8 +41,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 }
 
 @property (nonatomic) int lastIndex;
-@property (nonatomic, retain) CALayer *rootAnimationLayer;
-@property (nonatomic, retain) NSMutableArray *animationImages;
+@property (nonatomic, strong) CALayer *rootAnimationLayer;
+@property (nonatomic, strong) NSMutableArray *animationImages;
 
 - (void)addLayers:(CALayer *)layer, ...NS_REQUIRES_NIL_TERMINATION;
 

@@ -306,13 +306,13 @@ repeatDelay = 0.0;
     
     [CATransaction commit];
     
-    if (controller && [controller respondsToSelector:@selector(animationDidFinish:)]) {
-        if (currentDirection == kDirectionForward && value == 10.0f) {
-            [controller animationDidFinish:1];
-        } else if (currentDirection == kDirectionBackward && value == 10.0f) {
-            [controller animationDidFinish:-1];
-        }
-    }
+//    if (controller && [controller respondsToSelector:@selector(animationDidFinish:)]) {
+//        if (currentDirection == kDirectionForward && value == 10.0f) {
+//            [controller animationDidFinish:1];
+//        } else if (currentDirection == kDirectionBackward && value == 10.0f) {
+//            [controller animationDidFinish:-1];
+//        }
+//    }
     
     animationState = 0;
     animationLock = NO;
@@ -495,12 +495,12 @@ repeatDelay = 0.0;
         
         if (transitionImageBackup == nil) { //transition has begun, copy the layer content for the reverse layer
             
-            CGImageRef tempImageRef = (CGImageRef)targetBackLayer.contents;
+            CGImageRef tempImageRef = (__bridge CGImageRef)targetBackLayer.contents;
             
             //NSLog(@"%s:%d imageref=%@", __func__, __LINE__, tempImageRef);
             
-            transitionImageBackup = (CGImageRef)targetFrontLayer.contents;
-            targetFrontLayer.contents = (id)tempImageRef;
+            transitionImageBackup = (__bridge CGImageRef)targetFrontLayer.contents;
+            targetFrontLayer.contents = (__bridge id)tempImageRef;
         } 
         
         [self setTransformProgress:(rotationAfterDirection/10.0 * value)

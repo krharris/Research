@@ -56,11 +56,8 @@
 - (void)dealloc
 {
     [animationImages removeAllObjects];
-    [animationImages release];
     
-    [rootAnimationLayer release];
     
-    [super dealloc];
 }
 
 - (void)sendFrameToBack:(AnimationFrame *)aFrame 

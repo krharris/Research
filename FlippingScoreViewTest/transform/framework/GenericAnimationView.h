@@ -56,7 +56,7 @@
 
 // Stack of Animation Frames
 // Image data is grouped into Animation Frames, each frame contains the set of images displayed in between sequences
-@property (nonatomic, retain) NSMutableArray *imageStackArray;
+@property (nonatomic, strong) NSMutableArray *imageStackArray;
 
 // set inset to restrict text frame size
 @property (nonatomic) CGPoint textInset;
@@ -66,11 +66,11 @@
 @property (nonatomic) float fontSize;
 // provide a font from plist or use inbuilt fonts
 // if the rendering is very slow, change the font
-@property (nonatomic, assign) NSString *font;
+@property (nonatomic, unsafe_unretained) NSString *font;
 // font alignment
-@property (nonatomic, assign) NSString *fontAlignment;
+@property (nonatomic, unsafe_unretained) NSString *fontAlignment;
 // truncation mode to set for CATextLayer
-@property (nonatomic, assign) NSString *textTruncationMode;
+@property (nonatomic, unsafe_unretained) NSString *textTruncationMode;
 
 // view has to know the type of animation to be able to prepare (draw, slice) the animation layers
 @property (nonatomic) AnimationType animationType;

@@ -14,7 +14,7 @@
 
 }
 
-@property (nonatomic, retain) AnimationDelegate *animationDelegate;
+@property (nonatomic, strong) AnimationDelegate *animationDelegate;
 @property (nonatomic) int value;
 
 - (void)initNumbers;

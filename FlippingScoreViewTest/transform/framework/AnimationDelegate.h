@@ -71,8 +71,8 @@ typedef enum {
     int numTimesToAnimate;
 }
 
-@property (nonatomic, assign) GenericAnimationView *transformView;
-@property (nonatomic, assign) id controller;
+@property (nonatomic, unsafe_unretained) GenericAnimationView *transformView;
+@property (nonatomic, unsafe_unretained) id controller;
 
 // the duration of the next animation cycle
 @property (nonatomic) float nextDuration;
