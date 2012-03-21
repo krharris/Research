@@ -31,22 +31,17 @@
  */
 
 #import "AnimationViewController.h"
-#import "FlipView.h"
 #import "AnimationDelegate.h"
-#import "NumberFlipView.h"
-
 #import "FlippingScoreView.h"
 
 @implementation AnimationViewController
-
-//@synthesize flipView;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Custom initialization
-        step = 0;
+
     }
     return self;
 }
@@ -85,92 +80,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(onBackButtonPressed:)];
     
-    numberFlipViews = [[NSMutableArray alloc] init];
-    animationDelegates = [[NSMutableArray alloc] init];
-     
-    score = 12344;
-    int startX = 210;
-    int startY = 10;
-
-    for (int i = 0; i < 5; ++i)
-    //for (int i = 0; i < 1; ++i)
-    {
-        //for (int j = 0; j < 8; ++j)
-        for (int j = 0; j < 1; ++j)
-        {
-            //NSLog(@"i = %i, j = %i", i*40, j*50);
-
-            NumberFlipView* numberFlipView = [[NumberFlipView alloc] initWithAnimationType:kAnimationFlipVertical frame:CGRectMake(startX-(i*40+(i*2)), startY+(j*50), 40, 50)];
-            numberFlipView.fontSize = 36;
-            numberFlipView.font = @"Helvetica Neue Bold";
-            numberFlipView.fontAlignment = @"center";
-            numberFlipView.textOffset = CGPointMake(0.0, 2.0);
-            numberFlipView.textTruncationMode = kCATruncationEnd;
-            numberFlipView.sublayerCornerRadius = 6.0f;
-            [numberFlipView initNumbers];
-
-            [animationDelegates addObject:numberFlipView.animationDelegate];
-            [numberFlipViews addObject:numberFlipView];
-            
-            [self.view addSubview:numberFlipView];
-        }
-    }
-    
-    
-    
-    //CGRect  viewRect = CGRectMake(40, 100, 225, 60);
-    //FlippingScoreView* flippingScoreView = [[FlippingScoreView alloc] initWithFrame:viewRect];
-    
-    CGPoint point = CGPointMake( 40, 100 );
+    CGPoint point = CGPointMake( 10, 100 );
     flippingScoreView = [[FlippingScoreView alloc] initWithPosition:point];
+    flippingScoreView.score = 12345;
 
     [self.view addSubview:flippingScoreView];
 }
 
-
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    /*
-    int numSteps = [animationDelegates count] + 1;
-    
-    for(AnimationDelegate *animationDelegate in animationDelegates)
-    {
-        --numSteps;
-
-        //if(animationDelegate != numberFlipView.animationDelegate)
-            [animationDelegate startAnimation:kDirectionForward numTimes:numSteps];
-    }
-     */
-    
-    
-    //    int digit1 = score % 10;
-    //    int digit2 = score % 100 - digit1;
-    //    int digit3 = score % 1000 - digit2 - digit1;
-    //    int digit4 = score % 10000 - digit3 - digit2 - digit1;
-    
     score += 1;
-
-    int digit1 = score % 10;
-    int digit2 = score % 100 / 10;
-    int digit3 = score % 1000 / 100;
-    int digit4 = score % 10000 / 1000;
-    int digit5 = score % 100000 / 10000;
-    
-    NumberFlipView* nfv = [numberFlipViews objectAtIndex:0];
-    nfv.value = digit1;
-    
-    nfv = [numberFlipViews objectAtIndex:1];
-    nfv.value = digit2;
-    
-    nfv = [numberFlipViews objectAtIndex:2];
-    nfv.value = digit3;
-    
-    nfv = [numberFlipViews objectAtIndex:3];
-    nfv.value = digit4;
-    
-    nfv = [numberFlipViews objectAtIndex:4];
-    nfv.value = digit5;
-    
     
     flippingScoreView.score = score;
 }
@@ -185,15 +104,6 @@
 {
     [super viewWillAppear:animated];
     
-    for(AnimationDelegate *animationDelegate in animationDelegates)
-    {
-        if (animationDelegate.repeat)
-            [animationDelegate startAnimation:kDirectionNone numTimes:0];
-    }
-    
-    //if (flippingScoreView.animationDelegate.repeat)
-    //    [flippingScoreView.animationDelegate startAnimation:kDirectionNone numTimes:0];
-    
 //    if (animationDelegate.repeat) {
 //        [animationDelegate startAnimation:kDirectionNone];
 //    }
@@ -205,29 +115,6 @@
     
 //    [animationDelegate resetTransformValues];
 //    [NSObject cancelPreviousPerformRequestsWithTarget:animationDelegate];
-    
-    //[flippingScoreView.animationDelegate resetTransformValues];
-    //[NSObject cancelPreviousPerformRequestsWithTarget:flippingScoreView.animationDelegate];
-    
-    for(AnimationDelegate *animationDelegate in animationDelegates)
-    {
-        [animationDelegate resetTransformValues];
-        [NSObject cancelPreviousPerformRequestsWithTarget:animationDelegate];
-    }
-}
-
-
-// use this to trigger events after specific interactions
-- (void)animationDidFinish:(int)direction 
-{
-    switch (step) 
-    {
-        case 0:
-            break;
-        case 1:
-            break;
-        default:break;
-    }
 }
 
 - (void)viewDidUnload

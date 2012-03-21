@@ -32,36 +32,18 @@
 
 #import <UIKit/UIKit.h>
 
-@class FlipView;
-@class NumberFlipView;
 @class AnimationDelegate;
 @class FlippingScoreView;
 
 @interface AnimationViewController : UIViewController <UIGestureRecognizerDelegate>
-{    
-    // use this to choreograph a sequence of animations that you want the user to step through
-    int step;
-    
+{
     // The controller needs a reference to the delegate for control of the animation sequence
     //AnimationDelegate *animationDelegate;
-    
-    NSMutableArray* numberFlipViews;
-    NSMutableArray* animationDelegates;
 
-    BOOL runWhenRestart;
-    
     int score;
-    
-    //NumberFlipView * numberFlipView;
-    
     FlippingScoreView* flippingScoreView;
 }
 
-//@property (nonatomic, retain) FlipView *flipView;
-
 - (void)onBackButtonPressed:(UIBarButtonItem *)sender;
-
-// animation delegate will notify the controller when the animation frame has reached a position of rest
-- (void)animationDidFinish:(int)direction;
 
 @end
