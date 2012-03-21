@@ -205,7 +205,7 @@
             numberFlipView.fontAlignment = @"center";
             numberFlipView.textOffset = CGPointMake(0.0, -2.0);
             numberFlipView.textTruncationMode = kCATruncationEnd;
-            numberFlipView.sublayerCornerRadius = 6.0f;
+            //numberFlipView.sublayerCornerRadius = 6.0f;
             [numberFlipView initNumbers];
             
             [animationDelegates addObject:numberFlipView.animationDelegate];

@@ -40,7 +40,6 @@
     // The controller needs a reference to the delegate for control of the animation sequence
     //AnimationDelegate *animationDelegate;
 
-    int score;
     FlippingScoreView* flippingScoreView;
 }
 

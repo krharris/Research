@@ -38,9 +38,7 @@
     return _value;
 }
 
-
-- (id)initWithAnimationType:(AnimationType)aType
-                      frame:(CGRect)aFrame 
+- (id)initWithAnimationType:(AnimationType)aType frame:(CGRect)aFrame 
 {
     if ((self = [super initWithAnimationType:aType frame:aFrame]))
     {
@@ -57,16 +55,21 @@
 
 - (void)initNumbers
 {
-    [self printText:@"9" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"8" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"7" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"6" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"5" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"4" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"3" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"2" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"1" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
-    [self printText:@"0" usingImage:nil backgroundColor:[UIColor blackColor] textColor:[UIColor whiteColor]];
+    UIImage *flipImage = [[UIImage imageNamed:@"flip_board74x115@2x~ipad.png"] retain];
+    
+    UIColor* text = [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f];
+    UIColor* backGround = [UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.0f];
+     
+    [self printText:@"9" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"8" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"7" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"6" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"5" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"4" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"3" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"2" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"1" usingImage:flipImage backgroundColor:backGround textColor:text];
+    [self printText:@"0" usingImage:flipImage backgroundColor:backGround textColor:text];
 }
 
 @end

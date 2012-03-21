@@ -89,11 +89,8 @@
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    score += 1;
-    
-    flippingScoreView.score = score;
+    flippingScoreView.score += 10;
 }
-
 
 - (void)onBackButtonPressed:(UIBarButtonItem *)sender
 {
