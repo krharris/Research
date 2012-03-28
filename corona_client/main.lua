@@ -1,7 +1,8 @@
 local json = require "json"
+require( "printTable" )
 
---local serverAddress = "http://floating-sunset-9026.herokuapp.com"
-local serverAddress = "http://0.0.0.0:3000"
+local serverAddress = "http://floating-sunset-9026.herokuapp.com"
+--local serverAddress = "http://0.0.0.0:3000"
 
 local myText = display.newText("(Waiting for response)", 0, 0, native.systemFont, 16)
 myText.x = display.contentCenterX
@@ -243,6 +244,8 @@ end
 local function createSession( event )
 
 	print( "------------------ createSession ------------------" ) 
+	
+	--printTable( event )
 	
 	if ( event.isError ) then
 		myText.text = "Network error!"
