@@ -271,7 +271,7 @@ end
 
 print( "\n\n\n" )
 
-network.request( serverAddress .. "/sessions/create.json?email=test1@test.com&password=password1", "GET", createSession )
+network.request( serverAddress .. "/sessions/create.json?email=foo@bar.com&password=password", "GET", createSession )
 
 
 -- http://developer.anscamobile.com/node/5305
